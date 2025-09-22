@@ -35,12 +35,13 @@ The CSV contains deal multiples data with columns like:
 
 ## Metadata Structure
 
-The metadata file contains tracking information:
+The metadata file contains tracking information with a unique retrieval ID to ensure fresh commits:
 
 ```json
 {
   "lastUpdated": "2025-09-22T16:47:40.340Z",
   "timestamp": 1758559660340,
+  "retrievalId": "82fba3fa-7fec-4350-8438-032f70974bc7",
   "source": "Google Sheets CSV",
   "url": "https://docs.google.com/...",
   "dataLength": 14953104

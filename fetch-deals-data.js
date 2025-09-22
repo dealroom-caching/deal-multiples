@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 
 // Google Sheets CSV URL
 const CSV_URL = "https://docs.google.com/spreadsheets/d/10qd9IhTdrq_vZzGFDkwxcio8hH48LZu9npaWespygTs/export?format=csv&gid=806431249&single=true&output";
@@ -43,13 +44,22 @@ async function main() {
     const metadata = {
       lastUpdated: new Date().toISOString(),
       timestamp: Date.now(),
+      retrievalId: crypto.randomUUID(), // Unique ID for each retrieval
       source: 'Google Sheets CSV',
       url: CSV_URL,
       dataLength: csvData.length
     };
     
-    // Save CSV file
+    // Check if CSV content has changed
     const csvFilePath = path.join(cacheDir, 'deals.csv');
+    let contentChanged = true;
+    if (fs.existsSync(csvFilePath)) {
+      const existingCsv = fs.readFileSync(csvFilePath, 'utf8');
+      contentChanged = existingCsv !== csvData;
+      console.log(`📊 Content comparison: ${contentChanged ? 'Data has changed' : 'Data is identical to existing file'}`);
+    }
+    
+    // Save CSV file
     fs.writeFileSync(csvFilePath, csvData);
     
     // Save metadata as JSON
@@ -61,10 +71,13 @@ async function main() {
     fs.utimesSync(csvFilePath, now, now);
     fs.utimesSync(metadataFilePath, now, now);
     
+    console.log('🔄 Files updated with fresh timestamps and unique retrieval ID');
+    
     console.log(`\n✅ Cache updated successfully!`);
     console.log(`📁 CSV file: ${csvFilePath}`);
     console.log(`📁 Metadata: ${metadataFilePath}`);
     console.log(`📊 Data size: ${csvData.length} characters`);
+    console.log(`🔄 Content changed: ${contentChanged ? 'Yes' : 'No'}`);
     console.log(`🕒 Timestamp: ${metadata.lastUpdated}`);
     
   } catch (error) {

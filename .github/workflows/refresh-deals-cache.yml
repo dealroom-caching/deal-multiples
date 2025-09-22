@@ -27,7 +27,14 @@ jobs:
       
       - name: Fetch fresh deals CSV data
         run: |
+          echo "=== Before fetching data ==="
+          ls -la public/cached-data/ || echo "Cache directory doesn't exist yet"
+          echo ""
+          echo "=== Running fetch script ==="
           node fetch-deals-data.js
+          echo ""
+          echo "=== After fetching data ==="
+          ls -la public/cached-data/
       
       - name: Commit updated cache
         run: |
