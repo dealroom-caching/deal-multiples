@@ -1,6 +1,7 @@
 {
-  "lastUpdated": "2025-09-22T16:47:40.340Z",
-  "timestamp": 1758559660340,
+  "lastUpdated": "2025-09-22T19:38:02.978Z",
+  "timestamp": 1758569882979,
+  "retrievalId": "b9a40bb2-6a53-406c-b1ba-99c174c3e35b",
   "source": "Google Sheets CSV",
   "url": "https://docs.google.com/spreadsheets/d/10qd9IhTdrq_vZzGFDkwxcio8hH48LZu9npaWespygTs/export?format=csv&gid=806431249&single=true&output",
   "dataLength": 14953104
