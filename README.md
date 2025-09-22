@@ -56,3 +56,4 @@ The cache files are publicly accessible via GitHub raw files:
 ## Time Validation
 
 Use the timestamp in the metadata file to implement time-based validation (e.g., 26-hour cache expiry) in your applications.
+
