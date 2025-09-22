@@ -1,0 +1,16 @@
+{
+  "name": "deal-multiples-data",
+  "version": "1.0.0",
+  "description": "Automated cache for deal multiples data from Google Sheets CSV",
+  "type": "module",
+  "scripts": {
+    "fetch-deals-data": "node fetch-deals-data.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dealroom-caching/power-law-ranking-data.git"
+  },
+  "author": "Kjeld",
+  "license": "MIT",
+  "homepage": "https://github.com/dealroom-caching/power-law-ranking-data#readme"
+}
