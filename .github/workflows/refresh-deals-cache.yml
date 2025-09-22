@@ -6,7 +6,6 @@ on:
   workflow_dispatch:     # Manual trigger button
   push:
     branches: [ main ]   # Also refresh on code pushes
-    paths: [ 'deal-multiples/**' ]  # Only trigger when deal-multiples folder changes
 
 jobs:
   update-deals-cache:
@@ -28,7 +27,6 @@ jobs:
       
       - name: Fetch fresh deals CSV data
         run: |
-          cd deal-multiples
           node fetch-deals-data.js
       
       - name: Commit updated cache
@@ -38,15 +36,15 @@ jobs:
           
           # Show what files exist
           echo "=== Files in deals cache directory ==="
-          ls -la deal-multiples/public/cached-data/
+          ls -la public/cached-data/
           
           # Show git status before adding
           echo "=== Git status before adding ==="
           git status
           
-          # Add all files in the deal-multiples cache directory
+          # Add all files in the cache directory
           echo "=== Adding files ==="
-          git add -f deal-multiples/public/cached-data/
+          git add -f public/cached-data/
           
           # Show what's staged
           echo "=== Staged changes ==="

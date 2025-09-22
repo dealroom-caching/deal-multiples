@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dealroom-caching/power-law-ranking-data.git"
+    "url": "git+https://github.com/dealroom-caching/deal-multiples.git"
   },
   "author": "Kjeld",
   "license": "MIT",
-  "homepage": "https://github.com/dealroom-caching/power-law-ranking-data#readme"
+  "homepage": "https://github.com/dealroom-caching/deal-multiples#readme"
 }
 

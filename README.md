@@ -50,8 +50,8 @@ The metadata file contains tracking information:
 ## Access
 
 The cache files are publicly accessible via GitHub raw files:
-- `https://raw.githubusercontent.com/dealroom-caching/power-law-ranking-data/main/deal-multiples/public/cached-data/deals.csv`
-- `https://raw.githubusercontent.com/dealroom-caching/power-law-ranking-data/main/deal-multiples/public/cached-data/deals-metadata.json`
+- `https://raw.githubusercontent.com/dealroom-caching/deal-multiples/main/public/cached-data/deals.csv`
+- `https://raw.githubusercontent.com/dealroom-caching/deal-multiples/main/public/cached-data/deals-metadata.json`
 
 ## Time Validation
 
