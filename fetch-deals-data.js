@@ -59,8 +59,12 @@ async function main() {
       console.log(`📊 Content comparison: ${contentChanged ? 'Data has changed' : 'Data is identical to existing file'}`);
     }
     
-    // Save CSV file
-    fs.writeFileSync(csvFilePath, csvData);
+    // Save CSV file with retrieval marker to ensure git always detects changes
+    const csvWithMarker = csvData + `\n# Retrieved: ${metadata.lastUpdated} | ID: ${metadata.retrievalId}\n`;
+    fs.writeFileSync(csvFilePath, csvWithMarker);
+    
+    // Update metadata to reflect the final file size including marker
+    metadata.finalFileSize = csvWithMarker.length;
     
     // Save metadata as JSON
     const metadataFilePath = path.join(cacheDir, 'deals-metadata.json');

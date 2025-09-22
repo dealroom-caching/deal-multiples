@@ -49,9 +49,10 @@ jobs:
           echo "=== Git status before adding ==="
           git status
           
-          # Add all files in the cache directory
+          # Add all files in the cache directory (force add to ensure files are tracked)
           echo "=== Adding files ==="
-          git add -f public/cached-data/
+          git add -f public/cached-data/deals.csv
+          git add -f public/cached-data/deals-metadata.json
           
           # Show what's staged
           echo "=== Staged changes ==="

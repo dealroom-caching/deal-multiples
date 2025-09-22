@@ -35,7 +35,7 @@ The CSV contains deal multiples data with columns like:
 
 ## Metadata Structure
 
-The metadata file contains tracking information with a unique retrieval ID to ensure fresh commits:
+The metadata file contains tracking information with a unique retrieval ID to ensure fresh commits. The CSV file includes a retrieval marker at the end to guarantee git detects changes:
 
 ```json
 {
@@ -44,7 +44,8 @@ The metadata file contains tracking information with a unique retrieval ID to en
   "retrievalId": "82fba3fa-7fec-4350-8438-032f70974bc7",
   "source": "Google Sheets CSV",
   "url": "https://docs.google.com/...",
-  "dataLength": 14953104
+  "dataLength": 14953104,
+  "finalFileSize": 14953186
 }
 ```
 
