@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2025-10-29T03:45:37.964Z",
-  "timestamp": 1761709537964,
-  "retrievalId": "c82f66a7-6918-4c37-885f-9fd3346b484a",
+  "lastUpdated": "2025-10-30T03:41:23.336Z",
+  "timestamp": 1761795683336,
+  "retrievalId": "42448cc5-e89a-4b3d-8b04-96502fb01d3f",
   "source": "Google Sheets CSV",
   "url": "https://docs.google.com/spreadsheets/d/10qd9IhTdrq_vZzGFDkwxcio8hH48LZu9npaWespygTs/export?format=csv&gid=806431249&single=true&output",
-  "dataLength": 10693121,
-  "finalFileSize": 10693203
+  "dataLength": 10698550,
+  "finalFileSize": 10698632
 }
